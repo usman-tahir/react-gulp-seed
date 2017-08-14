@@ -8,6 +8,10 @@ class SearchBar extends React.Component {
       </form>
     );
   }
+
+  handleChange() {
+    this.props.onUserInput(this.refs.filterTextInput.value);
+  }
 }
 
 export default SearchBar;

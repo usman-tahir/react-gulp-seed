@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchTable from './SearchTable';
+import SearchableTable from './SearchableTable';
 import { data } from './data';
 
-ReactDOM.render(<SearchTable data={data}/>, document.getElementById('searchableTable'));
+ReactDOM.render(<SearchableTable data={data}/>, document.getElementById('searchableTable'));

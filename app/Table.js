@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from './Section';
 
 class Table extends React.Component {
   render() {
