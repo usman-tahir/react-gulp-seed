@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import Table from './Table';
+import Section from './Section';
 
 export default class SearchableTable extends React.Component {
   constructor() {
