@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     gutil = require('gulp-util'),
     babelify = require('babelify'),
+    uglify = require('gulp-uglify'),
     taskRefireCount = 0;
 
 // External dependencies not rebundled while developing,
@@ -18,12 +19,19 @@ gulp.task('deploy', function() {
   bundleApp(true);
 });
 
+gulp.task('uglify', function() {
+  gulp.src('./dist/**/*.js')
+    .uglify()
+    .pipe(gulp.dest('./dist/min/js/'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(['./app/**/*.js'], ['scripts']);
 });
 
 // Default Gulp task
 gulp.task('default', ['scripts', 'watch']);
+gulp.task('production', ['scripts', 'uglify']);
 
 
 // Private functions called within the Gulp tasks
